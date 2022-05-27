@@ -15,7 +15,7 @@ function drawOnce() {
   for (let i = 0; i < sides; i++) {
     let point = points[i]
     for (let j = 0; j < sides; j++) {
-      if (j >= i - 1 && j <= i + 1) {
+      if (j == 0 || j == sides - 1 || (j >= i - 1 && j <= i + 1)) {
         continue
       }
       let anotherPoint = points[j]
