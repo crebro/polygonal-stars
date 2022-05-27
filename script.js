@@ -1,5 +1,5 @@
-let sides = 50
-let size = 500
+let sides = 20
+let size = 300
 let maxStrokeWeight = 1
 let strokeWeightValue = 0.5
 
