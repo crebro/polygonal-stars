@@ -1,7 +1,7 @@
-let sides = 5
-let size = 100
+let sides = 50
+let size = 500
 let maxStrokeWeight = 1
-let strokeWeightValue = 0.1
+let strokeWeightValue = 0.5
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
