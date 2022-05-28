@@ -35,22 +35,25 @@ function polygonPoints(x, y, radius, npoints) {
   return points
 }
 
+function mouseWheel(event) {
+  if (event.deltaY < 0) {
+    size = size * 1.1
+  } else {
+    size = size * 0.9
+  }
+  drawOnce()
+}
+
 // front end functionality
 const polygonSidesField = document.getElementById('polygon-sides-field')
-const polygonSizeField = document.getElementById('polygon-size-field')
 const storkeWeightField = document.getElementById('polygon-stroke-weight-field')
 
-polygonSidesField.addEventListener('change', (e) => {
+polygonSidesField.addEventListener('input', (e) => {
   sides = e.target.value
   drawOnce()
 })
 
-polygonSizeField.addEventListener('change', (e) => {
-  size = e.target.value
-  drawOnce()
-})
-
-storkeWeightField.addEventListener('change', (e) => {
+storkeWeightField.addEventListener('input', (e) => {
   strokeWeightValue = (e.target.value / 100) * maxStrokeWeight
   drawOnce()
 })
