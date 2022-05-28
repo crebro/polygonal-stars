@@ -8,15 +8,19 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #control-panel {
     display: flex;
     flex-direction: column;
     padding: 20px;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: top;
-    left: 0;
     width: 10vw;
     height: 100vh;
     color: white;

@@ -2,16 +2,20 @@ let sides = 20
 let size = 300
 let maxStrokeWeight = 1
 let strokeWeightValue = 0.5
+let cWidth
+let cHeight
 
 function setup() {
-  createCanvas(windowWidth, windowHeight)
+  cWidth = windowWidth * 0.9
+  cHeight = windowHeight
+  createCanvas(cWidth, cHeight)
   drawOnce()
 }
 
 function drawOnce() {
   background(255)
   strokeWeight(strokeWeightValue)
-  let points = polygonPoints(windowWidth / 2, windowHeight / 2, size, sides)
+  let points = polygonPoints(cWidth / 2, cHeight / 2, size, sides)
   for (let i = 0; i < sides; i++) {
     let point = points[i]
     for (let j = 0; j < sides; j++) {
