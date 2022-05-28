@@ -6,7 +6,7 @@ let cWidth
 let cHeight
 
 function setup() {
-  cWidth = windowWidth * 0.9
+  cWidth = windowWidth * 0.85
   cHeight = windowHeight
   createCanvas(cWidth, cHeight)
   drawOnce()
