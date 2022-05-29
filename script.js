@@ -18,8 +18,8 @@ function drawOnce() {
   let points = polygonPoints(cWidth / 2, cHeight / 2, size, sides)
   for (let i = 0; i < sides; i++) {
     let point = points[i]
-    for (let j = 0; j < sides; j++) {
-      if (j == 0 || j == sides - 1 || (j >= i - 1 && j <= i + 1)) {
+    for (let j = i + 2; j < sides; j++) {
+      if ((i == 0 && j == sides - 1) || (j >= i - 1 && j <= i + 1)) {
         continue
       }
       let anotherPoint = points[j]
