@@ -5,6 +5,9 @@ let strokeWeightValue = 0.5
 let cWidth
 let cHeight
 
+
+const numberIndicator = document.getElementById('number-indicator');
+
 function setup() {
   cWidth = windowWidth * 0.85
   cHeight = windowHeight
@@ -13,7 +16,10 @@ function setup() {
 }
 
 function drawOnce() {
-  background(255)
+  numberIndicator.innerText = `N = ${sides}`;
+
+  background(0);
+  stroke(255);
   strokeWeight(strokeWeightValue)
   let points = polygonPoints(cWidth / 2, cHeight / 2, size, sides)
   for (let i = 0; i < sides; i++) {
@@ -61,3 +67,7 @@ storkeWeightField.addEventListener('input', (e) => {
   strokeWeightValue = (e.target.value / 100) * maxStrokeWeight
   drawOnce()
 })
+
+function windowResized() {
+  resizeCanvas(windowWidth * 0.85, windowHeight);
+}
