@@ -70,7 +70,8 @@ storkeWeightField.addEventListener('input', (e) => {
 })
 
 function windowResized() {
-  resizeCanvas(windowWidth * 0.85, windowHeight);
+  resizeCanvas(window.innerWidth * 0.85, windowHeight);
+  drawOnce();
 }
 
 const toggleThemeButton = document.getElementById('theme-change');
