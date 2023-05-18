@@ -4,6 +4,7 @@ let maxStrokeWeight = 1
 let strokeWeightValue = 0.5
 let cWidth
 let cHeight
+let darkTheme = true;
 
 
 const numberIndicator = document.getElementById('number-indicator');
@@ -18,8 +19,8 @@ function setup() {
 function drawOnce() {
   numberIndicator.innerText = `N = ${sides}`;
 
-  background(0);
-  stroke(255);
+  background(darkTheme ? 0 : 255);
+  stroke(darkTheme ? 255: 0);
   strokeWeight(strokeWeightValue)
   let points = polygonPoints(cWidth / 2, cHeight / 2, size, sides)
   for (let i = 0; i < sides; i++) {
@@ -71,3 +72,15 @@ storkeWeightField.addEventListener('input', (e) => {
 function windowResized() {
   resizeCanvas(windowWidth * 0.85, windowHeight);
 }
+
+const toggleThemeButton = document.getElementById('theme-change');
+
+function toggleTheme() {
+  document.body.classList.toggle('dark-theme');
+  darkTheme = !darkTheme;
+  drawOnce();
+}
+
+toggleThemeButton.onclick = toggleTheme;
+
+
